@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03610A5618954F48002C5CCD /* EntranceWorkSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 03610A5418954F48002C5CCD /* EntranceWorkSpace.m */; };
+		03610A5718954F48002C5CCD /* EntranceWorkSpace.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03610A5518954F48002C5CCD /* EntranceWorkSpace.xib */; };
 		0369B08D188FDD91004DE207 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0369B08C188FDD91004DE207 /* Accelerate.framework */; };
 		0369B08F188FDD91004DE207 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0369B08E188FDD91004DE207 /* AVFoundation.framework */; };
 		0369B091188FDD91004DE207 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0369B090188FDD91004DE207 /* CoreFoundation.framework */; };
@@ -20,7 +22,6 @@
 		0369B0A1188FDD91004DE207 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0369B0A0188FDD91004DE207 /* UIKit.framework */; };
 		0369B0A7188FDD91004DE207 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0369B0A5188FDD91004DE207 /* InfoPlist.strings */; };
 		0369B0A9188FDD91004DE207 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369B0A8188FDD91004DE207 /* main.m */; };
-		0369B0AD188FDD91004DE207 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0369B0AC188FDD91004DE207 /* Images.xcassets */; };
 		0369B0AF188FDD91004DE207 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0369B0AE188FDD91004DE207 /* Media.xcassets */; };
 		0369B0DE188FDD92004DE207 /* C4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369B0DD188FDD92004DE207 /* C4AppDelegate.m */; };
 		0369B0E0188FDD92004DE207 /* C4Loop.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0369B0DF188FDD92004DE207 /* C4Loop.aif */; };
@@ -33,6 +34,18 @@
 		0369B0F4188FDD92004DE207 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0369B0A0188FDD91004DE207 /* UIKit.framework */; };
 		0369B0FC188FDD92004DE207 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0369B0FA188FDD92004DE207 /* InfoPlist.strings */; };
 		0369B0FE188FDD92004DE207 /* SmileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369B0FD188FDD92004DE207 /* SmileTests.m */; };
+		0369B108188FDE7A004DE207 /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = 0369B107188FDE7A004DE207 /* d.png */; };
+		0369B10A188FDFD7004DE207 /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 0369B109188FDFD7004DE207 /* border.png */; };
+		037317F21892529000788A63 /* WorkSpaceA.m in Sources */ = {isa = PBXBuildFile; fileRef = 037317F01892529000788A63 /* WorkSpaceA.m */; };
+		037317F31892529000788A63 /* WorkSpaceA.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037317F11892529000788A63 /* WorkSpaceA.xib */; };
+		037317F7189252A000788A63 /* WorkSpaceB.m in Sources */ = {isa = PBXBuildFile; fileRef = 037317F5189252A000788A63 /* WorkSpaceB.m */; };
+		037317F8189252A000788A63 /* WorkSpaceB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037317F6189252A000788A63 /* WorkSpaceB.xib */; };
+		037317FB1892621000788A63 /* BaseWorkSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 037317FA1892621000788A63 /* BaseWorkSpace.m */; };
+		037317FD1892776500788A63 /* d_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 037317FC1892776500788A63 /* d_small.png */; };
+		037318001892EC8D00788A63 /* d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 037317FF1892EC8D00788A63 /* d4.wav */; };
+		037318021893485700788A63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037318011893485700788A63 /* Images.xcassets */; };
+		04371DD356AC48C3A13ED700 /* libPods-SmileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF57FCE95B04AB8B7C96AA8 /* libPods-SmileTests.a */; };
+		0F1E35241E744BCB98A26C4C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E94246D09A4255A0CBE775 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03610A5318954F48002C5CCD /* EntranceWorkSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntranceWorkSpace.h; sourceTree = "<group>"; };
+		03610A5418954F48002C5CCD /* EntranceWorkSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntranceWorkSpace.m; sourceTree = "<group>"; };
+		03610A5518954F48002C5CCD /* EntranceWorkSpace.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EntranceWorkSpace.xib; sourceTree = "<group>"; };
 		0369B089188FDD91004DE207 /* Smile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0369B08C188FDD91004DE207 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		0369B08E188FDD91004DE207 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -62,7 +78,6 @@
 		0369B0A6188FDD91004DE207 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0369B0A8188FDD91004DE207 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0369B0AA188FDD91004DE207 /* Smile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smile-Prefix.pch"; sourceTree = "<group>"; };
-		0369B0AC188FDD91004DE207 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0369B0AE188FDD91004DE207 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0369B0B1188FDD91004DE207 /* C4ActivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = C4ActivityIndicator.h; path = Headers/C4ActivityIndicator.h; sourceTree = "<group>"; };
 		0369B0B2188FDD91004DE207 /* C4AddSubview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = C4AddSubview.h; path = Headers/C4AddSubview.h; sourceTree = "<group>"; };
@@ -120,6 +135,23 @@
 		0369B0F9188FDD92004DE207 /* SmileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmileTests-Info.plist"; sourceTree = "<group>"; };
 		0369B0FB188FDD92004DE207 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0369B0FD188FDD92004DE207 /* SmileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmileTests.m; sourceTree = "<group>"; };
+		0369B107188FDE7A004DE207 /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d.png; sourceTree = "<group>"; };
+		0369B109188FDFD7004DE207 /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = border.png; sourceTree = "<group>"; };
+		037317EF1892529000788A63 /* WorkSpaceA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkSpaceA.h; sourceTree = "<group>"; };
+		037317F01892529000788A63 /* WorkSpaceA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkSpaceA.m; sourceTree = "<group>"; };
+		037317F11892529000788A63 /* WorkSpaceA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkSpaceA.xib; sourceTree = "<group>"; };
+		037317F41892529F00788A63 /* WorkSpaceB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkSpaceB.h; sourceTree = "<group>"; };
+		037317F5189252A000788A63 /* WorkSpaceB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkSpaceB.m; sourceTree = "<group>"; };
+		037317F6189252A000788A63 /* WorkSpaceB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkSpaceB.xib; sourceTree = "<group>"; };
+		037317F91892621000788A63 /* BaseWorkSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWorkSpace.h; sourceTree = "<group>"; };
+		037317FA1892621000788A63 /* BaseWorkSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWorkSpace.m; sourceTree = "<group>"; };
+		037317FC1892776500788A63 /* d_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d_small.png; sourceTree = "<group>"; };
+		037317FF1892EC8D00788A63 /* d4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d4.wav; sourceTree = "<group>"; };
+		037318011893485700788A63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		06E94246D09A4255A0CBE775 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1201D1F53973484DA5E0150E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		24D723107A9A49F68DF528BF /* Pods-SmileTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileTests.xcconfig"; path = "Pods/Pods-SmileTests.xcconfig"; sourceTree = "<group>"; };
+		6AF57FCE95B04AB8B7C96AA8 /* libPods-SmileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +171,7 @@
 				0369B091188FDD91004DE207 /* CoreFoundation.framework in Frameworks */,
 				0369B09B188FDD91004DE207 /* Foundation.framework in Frameworks */,
 				0369B09D188FDD91004DE207 /* OpenGLES.framework in Frameworks */,
+				0F1E35241E744BCB98A26C4C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +182,7 @@
 				0369B0F2188FDD92004DE207 /* XCTest.framework in Frameworks */,
 				0369B0F4188FDD92004DE207 /* UIKit.framework in Frameworks */,
 				0369B0F3188FDD92004DE207 /* Foundation.framework in Frameworks */,
+				04371DD356AC48C3A13ED700 /* libPods-SmileTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +196,8 @@
 				0369B0F7188FDD92004DE207 /* SmileTests */,
 				0369B08B188FDD91004DE207 /* Frameworks */,
 				0369B08A188FDD91004DE207 /* Products */,
+				1201D1F53973484DA5E0150E /* Pods.xcconfig */,
+				24D723107A9A49F68DF528BF /* Pods-SmileTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +225,8 @@
 				0369B09E188FDD91004DE207 /* QuartzCore.framework */,
 				0369B0A0188FDD91004DE207 /* UIKit.framework */,
 				0369B0F1188FDD92004DE207 /* XCTest.framework */,
+				06E94246D09A4255A0CBE775 /* libPods.a */,
+				6AF57FCE95B04AB8B7C96AA8 /* libPods-SmileTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,10 +236,25 @@
 			children = (
 				0369B0E9188FDD92004DE207 /* C4WorkSpace.h */,
 				0369B0EA188FDD92004DE207 /* C4WorkSpace.m */,
+				0369B107188FDE7A004DE207 /* d.png */,
+				037317FC1892776500788A63 /* d_small.png */,
+				0369B109188FDFD7004DE207 /* border.png */,
+				037317FF1892EC8D00788A63 /* d4.wav */,
 				0369B0AB188FDD91004DE207 /* Media */,
 				0369B0B0188FDD91004DE207 /* Framework */,
 				0369B0E5188FDD92004DE207 /* Storyboards */,
 				0369B0A3188FDD91004DE207 /* Supporting Files */,
+				037317F91892621000788A63 /* BaseWorkSpace.h */,
+				037317FA1892621000788A63 /* BaseWorkSpace.m */,
+				03610A5318954F48002C5CCD /* EntranceWorkSpace.h */,
+				03610A5418954F48002C5CCD /* EntranceWorkSpace.m */,
+				03610A5518954F48002C5CCD /* EntranceWorkSpace.xib */,
+				037317EF1892529000788A63 /* WorkSpaceA.h */,
+				037317F01892529000788A63 /* WorkSpaceA.m */,
+				037317F11892529000788A63 /* WorkSpaceA.xib */,
+				037317F41892529F00788A63 /* WorkSpaceB.h */,
+				037317F5189252A000788A63 /* WorkSpaceB.m */,
+				037317F6189252A000788A63 /* WorkSpaceB.xib */,
 			);
 			path = Smile;
 			sourceTree = "<group>";
@@ -222,7 +275,7 @@
 		0369B0AB188FDD91004DE207 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				0369B0AC188FDD91004DE207 /* Images.xcassets */,
+				037318011893485700788A63 /* Images.xcassets */,
 				0369B0AE188FDD91004DE207 /* Media.xcassets */,
 				0369B0DF188FDD92004DE207 /* C4Loop.aif */,
 				0369B0E1188FDD92004DE207 /* inception.mov */,
@@ -314,9 +367,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0369B101188FDD92004DE207 /* Build configuration list for PBXNativeTarget "Smile" */;
 			buildPhases = (
+				A0149E05C5BA4939873DAC6D /* Check Pods Manifest.lock */,
 				0369B085188FDD91004DE207 /* Sources */,
 				0369B086188FDD91004DE207 /* Frameworks */,
 				0369B087188FDD91004DE207 /* Resources */,
+				11AC4F4679B64C59B876BE47 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,9 +386,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0369B104188FDD92004DE207 /* Build configuration list for PBXNativeTarget "SmileTests" */;
 			buildPhases = (
+				AF87A0B9745445588DD553E0 /* Check Pods Manifest.lock */,
 				0369B0EC188FDD92004DE207 /* Sources */,
 				0369B0ED188FDD92004DE207 /* Frameworks */,
 				0369B0EE188FDD92004DE207 /* Resources */,
+				6DA5856AF1B94FBCB4409C34 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -355,6 +412,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Takatomo Okitsu";
 				TargetAttributes = {
+					0369B088188FDD91004DE207 = {
+						DevelopmentTeam = 8G5BMN32BJ;
+					};
 					0369B0EF188FDD92004DE207 = {
 						TestTargetID = 0369B088188FDD91004DE207;
 					};
@@ -386,9 +446,16 @@
 			files = (
 				0369B0A7188FDD91004DE207 /* InfoPlist.strings in Resources */,
 				0369B0E0188FDD92004DE207 /* C4Loop.aif in Resources */,
+				037318001892EC8D00788A63 /* d4.wav in Resources */,
+				037317F31892529000788A63 /* WorkSpaceA.xib in Resources */,
+				037317FD1892776500788A63 /* d_small.png in Resources */,
 				0369B0AF188FDD91004DE207 /* Media.xcassets in Resources */,
+				037317F8189252A000788A63 /* WorkSpaceB.xib in Resources */,
+				0369B10A188FDFD7004DE207 /* border.png in Resources */,
 				0369B0E8188FDD92004DE207 /* Main.storyboard in Resources */,
-				0369B0AD188FDD91004DE207 /* Images.xcassets in Resources */,
+				037318021893485700788A63 /* Images.xcassets in Resources */,
+				03610A5718954F48002C5CCD /* EntranceWorkSpace.xib in Resources */,
+				0369B108188FDE7A004DE207 /* d.png in Resources */,
 				0369B0E2188FDD92004DE207 /* inception.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,14 +470,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11AC4F4679B64C59B876BE47 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DA5856AF1B94FBCB4409C34 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-SmileTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0149E05C5BA4939873DAC6D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF87A0B9745445588DD553E0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0369B085188FDD91004DE207 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0369B0A9188FDD91004DE207 /* main.m in Sources */,
+				037317F7189252A000788A63 /* WorkSpaceB.m in Sources */,
 				0369B0EB188FDD92004DE207 /* C4WorkSpace.m in Sources */,
+				03610A5618954F48002C5CCD /* EntranceWorkSpace.m in Sources */,
 				0369B0DE188FDD92004DE207 /* C4AppDelegate.m in Sources */,
+				037317FB1892621000788A63 /* BaseWorkSpace.m in Sources */,
+				037317F21892529000788A63 /* WorkSpaceA.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,9 +670,10 @@
 		};
 		0369B102188FDD92004DE207 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1201D1F53973484DA5E0150E /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Smile/Smile-Prefix.pch";
 				INFOPLIST_FILE = "Smile/Smile-Info.plist";
@@ -547,15 +682,17 @@
 					/Users/okitsu.takatomo/Documents/workspace/Smile/Smile,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		0369B103188FDD92004DE207 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1201D1F53973484DA5E0150E /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Smile/Smile-Prefix.pch";
 				INFOPLIST_FILE = "Smile/Smile-Info.plist";
@@ -564,12 +701,14 @@
 					/Users/okitsu.takatomo/Documents/workspace/Smile/Smile,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		0369B105188FDD92004DE207 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24D723107A9A49F68DF528BF /* Pods-SmileTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Smile.app/Smile";
@@ -593,6 +732,7 @@
 		};
 		0369B106188FDD92004DE207 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24D723107A9A49F68DF528BF /* Pods-SmileTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Smile.app/Smile";
@@ -629,6 +769,7 @@
 				0369B103188FDD92004DE207 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0369B104188FDD92004DE207 /* Build configuration list for PBXNativeTarget "SmileTests" */ = {
 			isa = XCConfigurationList;
@@ -637,6 +778,7 @@
 				0369B106188FDD92004DE207 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

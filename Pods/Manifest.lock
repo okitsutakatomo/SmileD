@@ -1,0 +1,72 @@
+PODS:
+  - AHEasing (1.1)
+  - BlocksKit (2.0.0):
+    - BlocksKit/All
+  - BlocksKit/All (2.0.0):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.0.0)
+  - BlocksKit/DynamicDelegate (2.0.0):
+    - libffi
+  - BlocksKit/MessageUI (2.0.0):
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.0.0):
+    - BlocksKit/DynamicDelegate
+  - box2d (2.3.0)
+  - CAAnimationBlocks (0.0.1)
+  - CocoaAsyncSocket (7.3.3)
+  - CocoaLumberjack (1.8.0):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.8.0)
+  - CocoaLumberjack/Extensions (1.8.0):
+    - CocoaLumberjack/Core
+  - GHUnitIOS (0.5.8)
+  - InflectorKit (0.0.1)
+  - libffi (3.0.13)
+  - MBProgressHUD (0.8)
+  - OCMock (2.2.2)
+  - SDWebImage (3.5.2):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.2)
+  - SKBounceAnimation (1.0.04)
+  - UIView+EasingFunctions (0.0.2):
+    - UIView+EasingFunctions/Bare
+    - UIView+EasingFunctions/WithAHEasing
+  - UIView+EasingFunctions/Bare (0.0.2)
+  - UIView+EasingFunctions/WithAHEasing (0.0.2):
+    - AHEasing
+
+DEPENDENCIES:
+  - AHEasing
+  - BlocksKit
+  - box2d
+  - CAAnimationBlocks
+  - CocoaAsyncSocket
+  - CocoaLumberjack
+  - GHUnitIOS
+  - InflectorKit
+  - MBProgressHUD
+  - OCMock
+  - SDWebImage
+  - SKBounceAnimation
+  - UIView+EasingFunctions
+
+SPEC CHECKSUMS:
+  AHEasing: bab258795266ebce8a965e1fda3613b7ed80f0b7
+  BlocksKit: b29ee3f28ba06a09f5c64987314ce5b75b2c3962
+  box2d: 8214af539447091d8e6f1ac9e06734daacefd4ac
+  CAAnimationBlocks: b70f877c5b92734abef270152187d3287d84e8f8
+  CocoaAsyncSocket: 50a73b79fb77f0dbb57cdc5c247c8f19e9cb3b33
+  CocoaLumberjack: 6ed94046d2ca7fde03a73b3d01b8cfc56574b314
+  GHUnitIOS: 23167e22b8abe162d71f86bd4bda7550e53414cb
+  InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12
+  libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
+  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  OCMock: ffba68873fd32cfd35d885bddad23bfa816da4a3
+  SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
+  SKBounceAnimation: 1d53d07c3496c1f61015e9d93bbaefda8391dc0d
+  UIView+EasingFunctions: c6170b1cfa0d611fd5fa274d86d32bf1913f8a73
+
+COCOAPODS: 0.26.2

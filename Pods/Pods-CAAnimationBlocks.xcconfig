@@ -1,0 +1,1 @@
+PODS_CAANIMATIONBLOCKS_OTHER_LDFLAGS = -framework QuartzCore

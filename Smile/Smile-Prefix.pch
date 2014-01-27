@@ -12,6 +12,7 @@
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
+    #import <BlocksKit/BlocksKit.h>
 #endif
 
 #import <UIKit/UIKit.h>
