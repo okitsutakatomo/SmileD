@@ -672,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1201D1F53973484DA5E0150E /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -691,8 +692,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1201D1F53973484DA5E0150E /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Smile/Smile-Prefix.pch";
 				INFOPLIST_FILE = "Smile/Smile-Info.plist";
@@ -701,7 +703,7 @@
 					/Users/okitsu.takatomo/Documents/workspace/Smile/Smile,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "41AB3D01-1711-4BD2-8980-1329E59DAD34";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

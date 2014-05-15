@@ -55,7 +55,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AHEasing: bab258795266ebce8a965e1fda3613b7ed80f0b7
-  BlocksKit: b29ee3f28ba06a09f5c64987314ce5b75b2c3962
+  BlocksKit: c719258499c89fb43619abb434506a67b9e5332d
   box2d: 8214af539447091d8e6f1ac9e06734daacefd4ac
   CAAnimationBlocks: b70f877c5b92734abef270152187d3287d84e8f8
   CocoaAsyncSocket: 50a73b79fb77f0dbb57cdc5c247c8f19e9cb3b33
@@ -69,4 +69,4 @@ SPEC CHECKSUMS:
   SKBounceAnimation: 1d53d07c3496c1f61015e9d93bbaefda8391dc0d
   UIView+EasingFunctions: c6170b1cfa0d611fd5fa274d86d32bf1913f8a73
 
-COCOAPODS: 0.26.2
+COCOAPODS: 0.29.0
