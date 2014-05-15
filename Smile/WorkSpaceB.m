@@ -85,10 +85,6 @@
     
     CGFloat time = ([C4Math randomInt:250]/100.0f) + 1.0f;
     sender.animationDuration = time;
-//    NSInteger r = [C4Math randomIntBetweenA:100 andB:300];
-//    CGFloat theta = DegreesToRadians([C4Math randomInt:360]);
-//    sender.center = CGPointMake(r*[C4Math cos:theta] + (self.canvas.width/2),
-//                                r*[C4Math sin:theta] + (self.canvas.height/2));
     sender.center = CGPointMake(
                                 [C4Math randomIntBetweenA:50 andB:self.canvas.width - 50],
                                 [C4Math randomIntBetweenA:50 andB:self.canvas.height - 100]
@@ -121,10 +117,6 @@
     float controlY = (originalEndPoint.y - originalControlPoint.y) * 2 + originalEndPoint.y;
     CGPoint contronPoint = CGPointMake(controlX, controlY);
     
-//    CGPoint extraPoint = CGPointMake(originalControlPoint.x, originalStartPoint.y);
-//    float distanceX = MAX(extraPoint.x, originalStartPoint.x) - MIN(extraPoint.x, originalStartPoint.x);
-//    float distanceY = MAX(extraPoint.x, originalControlPoint.x) - MIN(extraPoint.x, originalControlPoint.x);
-//    CGPoint endPoint = CGPointMake(contronPoint.x - distanceX, contronPoint.y - distanceY);
     CGPoint endPoint = CGPointMake([C4Math randomIntBetweenA:300 andB:500], [C4Math randomIntBetweenA:500 andB:700]);
     
     [self addSmile:startPoint endPoint:endPoint controlPoint:contronPoint];
@@ -145,8 +137,6 @@
     
     CAKeyframeAnimation *animation;
     animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-//    animation.fillMode = kCAFillModeForwards;
-//    animation.removedOnCompletion = NO;
     animation.duration = 2.0;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     animation.path = path.CGPath;

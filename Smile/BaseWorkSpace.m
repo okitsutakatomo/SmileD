@@ -32,10 +32,6 @@
     _peerID = [[MCPeerID alloc] initWithDisplayName:@"Browser"];
     _session = [[MCSession alloc] initWithPeer:_peerID];
     _session.delegate = self;
-//    _browserView = [[MCBrowserViewController alloc] initWithServiceType:kServiceName
-//                                                                session:_session];
-//    _browserView.delegate = self;
-//    [self presentViewController:_browserView animated:YES completion:nil];
     
     _nearbyBrowser = [[MCNearbyServiceBrowser alloc]
                                              initWithPeer:_peerID
@@ -51,10 +47,6 @@
     _peerID = [[MCPeerID alloc] initWithDisplayName:ADVERTISER_NAME];
     _session = [[MCSession alloc] initWithPeer:_peerID];
     _session.delegate = self;
-//    _advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:kServiceName
-//                                                                discoveryInfo:nil
-//                                                                      session:_session];
-//    [_advertiserAssistant start];
     
     _nearbyAdvertiser = [[MCNearbyServiceAdvertiser alloc]
                          initWithPeer:_peerID
@@ -69,24 +61,7 @@
     [self showLoading];
 }
 
-//#pragma mark - MCBrowserViewControllerDelegate
-//
-//- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController {
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        [_browserView.browser stopBrowsingForPeers];
-//    }];
-//}
-//
-//- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController {
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        [_browserView.browser stopBrowsingForPeers];
-//    }];
-//}
-
 #pragma mark - MCSessionDelegate
-
-// MCSessionDelegate methods are called on a background queue, if you are going to update UI
-// elements you must perform the actions on the main queue.
 
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state {
     switch (state) {
@@ -96,9 +71,6 @@
                 [self showAlert:@"セットアップが正しく完了しました"];
             });
             
-            // This line only necessary for the advertiser. We want to stop advertising our services
-            // to other browsers when we successfully connect to one.
-//            [_advertiserAssistant stop];
             [_nearbyAdvertiser stopAdvertisingPeer];
             break;
         }
@@ -147,8 +119,6 @@
     });
 }
 
-// Required MCSessionDelegate protocol methods but are unused in this application.
-
 - (void)session:(MCSession *)session
 didStartReceivingResourceWithName:(NSString *)resourceName
        fromPeer:(MCPeerID *)peerID
@@ -191,34 +161,6 @@ didFinishReceivingResourceWithName:(NSString *)resourceName
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
-
-//-(void)createP2PConfigButton {
-//    CGRect shapeFrame = CGRectMake(0, self.canvas.height - 50, 50, 50);
-//    C4Shape *switchButton = [C4Shape rect:shapeFrame];
-//    switchButton.fillColor = [UIColor clearColor];
-//    switchButton.strokeColor = [UIColor clearColor];
-//    
-//    [switchButton addGesture:LONGPRESS name:@"longPress" action:@"pressedLong"];
-//    
-//    [self.canvas addShape:switchButton];
-//    
-//    [self listenFor:@"pressedLong" fromObject:switchButton andRunMethod:@"p2pButtonPressed:"];
-//}
-//
-//-(void)p2pButtonPressed: (NSNotification *)notification
-//{
-//    UIAlertView *alert = [UIAlertView bk_alertViewWithTitle:@"Launch Browser or Advertiser?"];
-//    [alert bk_addButtonWithTitle:@"Browser" handler:^{
-//        [self launchBrowser];
-//    }];
-//    [alert bk_addButtonWithTitle:@"Advertiser" handler:^{
-//        [self launchAdvertiser];
-//    }];
-//    [alert bk_addButtonWithTitle:@"Cancel" handler:^{
-//        //cancel
-//    }];
-//    [alert show];
-//}
 
 - (UIColor*)getBackgroundColor:(int)backgroundId
 {

@@ -67,12 +67,10 @@
 	    [session setSessionPreset:AVCaptureSessionPresetPhoto]; //iPad
 	}
 
-    // Select a video device, make an input
 	AVCaptureDevice *device;
 
     AVCaptureDevicePosition desiredPosition = AVCaptureDevicePositionFront;
 
-    // find the front facing camera
 	for (AVCaptureDevice *d in [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo]) {
 		if ([d position] == desiredPosition) {
 			device = d;
@@ -80,36 +78,28 @@
 			break;
 		}
 	}
-    // fall back to the default camera.
-    if( nil == device )
-    {
+    
+    if( nil == device ) {
         self.isUsingFrontFacingCamera = NO;
         device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     }
 
-    // get the input device
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
 
 	if( !error ) {
 
-        // add the input to the session
         if ( [session canAddInput:deviceInput] ){
             [session addInput:deviceInput];
         }
 
 
-        // Make a video data output
         self.videoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
 
-        // we want BGRA, both CoreGraphics and OpenGL work well with 'BGRA'
         NSDictionary *rgbOutputSettings = [NSDictionary dictionaryWithObject:
                                            [NSNumber numberWithInt:kCMPixelFormat_32BGRA] forKey:(id)kCVPixelBufferPixelFormatTypeKey];
         [self.videoDataOutput setVideoSettings:rgbOutputSettings];
         [self.videoDataOutput setAlwaysDiscardsLateVideoFrames:YES]; // discard if the data output queue is blocked
 
-        // create a serial dispatch queue used for the sample buffer delegate
-        // a serial dispatch queue must be used to guarantee that video frames will be delivered in order
-        // see the header doc for setSampleBufferDelegate:queue: for more information
         self.videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
         [self.videoDataOutput setSampleBufferDelegate:self queue:self.videoDataOutputQueue];
 
@@ -117,7 +107,6 @@
             [session addOutput:self.videoDataOutput];
         }
 
-        // get the output for doing face detection.
         [[self.videoDataOutput connectionWithMediaType:AVMediaTypeVideo] setEnabled:YES];
 
         self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
@@ -144,7 +133,6 @@
 	}
 }
 
-// clean up capture setup
 - (void)teardownAVCapture
 {
 	self.videoDataOutput = nil;
@@ -156,7 +144,6 @@
 }
 
 
-// utility routine to display error aleart if takePicture fails
 - (void)displayErrorOnMainQueue:(NSError *)error withMessage:(NSString *)message
 {
 	dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -171,7 +158,6 @@
 }
 
 
-// find where the video box is positioned within the preview layer based on the video size and gravity
 - (CGRect)videoPreviewBoxForGravity:(NSString *)gravity frameSize:(CGSize)frameSize apertureSize:(CGSize)apertureSize
 {
     CGFloat apertureRatio = apertureSize.height / apertureSize.width;
@@ -214,8 +200,6 @@
 	return videoBox;
 }
 
-// called asynchronously as the capture output is capturing sample buffers, this method asks the face detector
-// to detect features and for each draw the green border in a layer and set appropriate orientation
 - (void)drawFaces:(NSArray *)features forVideoBox:(CGRect)clearAperture orientation:(UIDeviceOrientation)orientation
 {
 	NSArray *sublayers = [NSArray arrayWithArray:[self.previewLayer sublayers]];
@@ -239,50 +223,34 @@
 	CGSize parentFrameSize = [self.canvas frame].size;
 	NSString *gravity = [self.previewLayer videoGravity];
 	BOOL isMirrored = [self.previewLayer isMirrored];
-    // gravidy AVLayerVideoGravityResizeAspect
-    // (CGSize) parentFrameSize = (width=768, height=1024)
-    // (CGRect) clearAperture = origin=(x=0, y=0) size=(width=1280, height=960)
 	CGRect previewBox = [self videoPreviewBoxForGravity:gravity
                                                           frameSize:parentFrameSize
                                                        apertureSize:clearAperture.size];
-    // (CGRect) previewBox = origin=(x=0, y=0) size=(width=768, height=1024)
 
 	for ( CIFaceFeature *faceFeature in features ) {
-		// find the correct position for the square layer within the previewLayer
-		// the feature box originates in the bottom left of the video frame.
-		// (Bottom right if mirroring is turned on)
 		CGRect faceRect = [faceFeature bounds];
-        //example (CGRect) faceRect = origin=(x=753.75, y=130) size=(width=462.5, height=462.5)
-
-		// flip preview width and height
 		CGFloat temp = faceRect.size.width;
 		faceRect.size.width = faceRect.size.height;
 		faceRect.size.height = temp;
 		temp = faceRect.origin.x;
 		faceRect.origin.x = faceRect.origin.y;
 		faceRect.origin.y = temp;
-        // example (CGRect) faceRect = origin=(x=130, y=753.75) size=(width=462.5, height=462.5)
-
-		// scale coordinates so they fit in the preview box, which may be scaled
-        // very important logic!!
+        
 		CGFloat widthScaleBy = previewBox.size.width / clearAperture.size.height;
 		CGFloat heightScaleBy = previewBox.size.height / clearAperture.size.width;
 		faceRect.size.width *= widthScaleBy;
 		faceRect.size.height *= heightScaleBy;
 		faceRect.origin.x *= widthScaleBy;
 		faceRect.origin.y *= heightScaleBy;
-        // (CGRect) faceRect = origin=(x=104, y=603) size=(width=370, height=370)
 
 		if ( isMirrored ) {
 			faceRect = CGRectOffset(faceRect, previewBox.origin.x + previewBox.size.width - faceRect.size.width - (faceRect.origin.x * 2), previewBox.origin.y);
-            // (CGRect) faceRect = origin=(x=294, y=603) size=(width=370, height=370)
         } else {
 			faceRect = CGRectOffset(faceRect, previewBox.origin.x, previewBox.origin.y);
 		}
 
 		C4Layer *featureLayer = nil;
 
-		// re-use an existing layer if possible
 		while ( !featureLayer && (currentSublayer < sublayersCount) ) {
 			C4Layer *currentLayer = [sublayers objectAtIndex:currentSublayer++];
 			if ( [[currentLayer name] isEqualToString:@"FaceLayer"] ) {
@@ -291,7 +259,6 @@
 			}
 		}
 //
-		// create a new one if necessary
 		if ( !featureLayer ) {
 			featureLayer = [[C4Layer alloc] init];
 			featureLayer.contents = (id)self.borderImage.CGImage;
@@ -389,7 +356,6 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection
 {
-	// get the image
 	CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 	CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
 	CIImage *ciImage = [[CIImage alloc] initWithCVPixelBuffer:pixelBuffer
@@ -398,13 +364,9 @@
 		CFRelease(attachments);
     }
 
-    // make sure your device orientation is not locked.
 	UIDeviceOrientation curDeviceOrientation = [[UIDevice currentDevice] orientation];
 
 	NSDictionary *imageOptions = nil;
-
-    //	imageOptions = [NSDictionary dictionaryWithObject:[self exifOrientation:curDeviceOrientation]
-    //                                               forKey:CIDetectorImageOrientation];
 
     imageOptions = @{
                      CIDetectorImageOrientation : [self exifOrientation:curDeviceOrientation],
@@ -417,12 +379,8 @@
 	NSArray *features = [self.faceDetector featuresInImage:ciImage
                                                    options:imageOptions];
 
-    // get the clean aperture
-    // the clean aperture is a rectangle that defines the portion of the encoded pixel dimensions
-    // that represents image data valid for display.
 	CMFormatDescriptionRef fdesc = CMSampleBufferGetFormatDescription(sampleBuffer);
 	CGRect cleanAperture = CMVideoFormatDescriptionGetCleanAperture(fdesc, false /*originIsTopLeft == false*/);
-    // (CGRect) cleanAperture = origin=(x=0, y=0) size=(width=1280, height=960) for ipad
 
 	dispatch_async(dispatch_get_main_queue(), ^(void) {
 		[self drawFaces:features
@@ -433,7 +391,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // We support only Portrait.
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -542,13 +499,6 @@
     CGFloat time = ([C4Math randomInt:250]/100.0f) + 2.0f;
     sender.animationDuration = time;
     sender.center = CGPointMake(sender.center.x, sender.center.y + 400);
-//
-//    //    sender.rotation = TWO_PI * 8;
-//    NSInteger r = [C4Math randomIntBetweenA:100 andB:300];
-//    CGFloat theta = DegreesToRadians([C4Math randomInt:360]);
-//    sender.center = CGPointMake(r*[C4Math cos:theta] + (sender.center.x),
-//                                r*[C4Math sin:theta] + (sender.center.y));
-//    [self runMethod:@"newPlace:" withObject:sender afterDelay:time];
 }
 
 
@@ -556,13 +506,6 @@
     CGFloat time = ([C4Math randomInt:250]/100.0f) + 1.0f;
     sender.animationDuration = time;
     sender.center = CGPointMake(sender.center.x + 4000, sender.center.y);
-    //
-    //    //    sender.rotation = TWO_PI * 8;
-    //    NSInteger r = [C4Math randomIntBetweenA:100 andB:300];
-    //    CGFloat theta = DegreesToRadians([C4Math randomInt:360]);
-    //    sender.center = CGPointMake(r*[C4Math cos:theta] + (sender.center.x),
-    //                                r*[C4Math sin:theta] + (sender.center.y));
-    //    [self runMethod:@"newPlace:" withObject:sender afterDelay:time];
 }
 
 - (void)sendData:(NSDictionary*)dataDict {
